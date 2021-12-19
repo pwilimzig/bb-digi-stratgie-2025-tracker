@@ -4,6 +4,7 @@ url: "https://strategie-tracker.smart-village.solutions" # the base hostname & p
 collections:
   chapters:
     output: true
+    sort_by: order
     permalink: /kapitel/:name/
     layout: chapter
 
@@ -27,6 +28,16 @@ defaults:
 
 # Build settings
 markdown: kramdown
+
+plugins:
+  - jekyll-timeago
+
+jekyll_timeago:
+  depth: 1
+  threshold: 0.05
+  default_locale: 'de'
+  available_locales:
+    - 'de'
 
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list

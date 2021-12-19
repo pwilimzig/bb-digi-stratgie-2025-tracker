@@ -8,8 +8,15 @@ layout: default
   {{ content }}
 </article>
 
-{% for chapter in site.chapters %}
+{% assign chapters = site.chapters | sort: 'order' %}
+<ul>
+{% for chapter in chapters %}
+  <li><a href="#{{chapter.section}}">{{chapter.title}}</a> ({{chapter.statements | size }} Vorhaben)</a></li>
+{% endfor %}
+</ul>
+{% for chapter in chapters %}
   <section>
+    <a name="{{chapter.section}}"></a>
     <header>
       <h3>
         <a href="{{ site.baseurl }}{{ chapter.url }}">
@@ -17,6 +24,10 @@ layout: default
         </a>
       </h3>
     </header>
+    {% if chapter.statements.size > 0 %}
     {% include statements.html statements=chapter.statements %}
+    {% else %}
+    Keine Vorhaben zu diesem Kapitel
+    {% endif %}
   </section>
 {% endfor %}
