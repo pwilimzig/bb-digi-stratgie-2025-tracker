@@ -1,0 +1,47 @@
+<table>
+  <thead>
+    <th>Vorhaben</th>
+    <th>Status</th>
+    <th>zuletzt<br/> überprüft</th>
+    <th>Versprochen<br/> bis</th>
+    <th>Verbleibende<br/> Zeit</th>
+    <th>Nachweise</th>
+  </thead>
+  <tbody>
+{% for statement in include.statements %}
+<tr id="{{ statement.id }}">
+  <td class="allow-wrap">
+    {{ statement.summary }}
+    <small>
+      <a class="back-ref" href="#ref-{{ statement.id }}" title="Stelle im Text">
+        📃
+        <span class="sr-only">Stelle im Text</span>
+      </a>
+    </small>
+  </td>
+  <td>
+    {% include status.html statement=statement %}
+  </td>
+  <td>{% if statement.last_update %}{{ statement.last_update | date: "%d.%m.%Y"}}{% else %}-{% endif %}</td>
+  <td>{{statement.deadline | date: "%m.%Y" }}
+  </td>
+  <td>
+    {% if statement.deadline %}
+    {{ statement.deadline | timeago }}
+    {% endif %}
+  </td>
+  <td>
+    {% if statement.reports %}
+      <ul>
+      {% for report in statement.reports %}
+        <li>
+          <a href="{{ report.url }}">{{ report.title }}</a>
+        </li>
+      {% endfor %}
+      </ul>
+    {% endif %}
+  </td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
