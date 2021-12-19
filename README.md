@@ -1,15 +1,19 @@
-# Koalitionstracker 2021
+# Tracker für die Brandenburger Digitalstrategie 2025
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e7e62dcf-5e58-4b75-aa57-fc1518a837a1/deploy-status)](https://app.netlify.com/sites/elated-euler-677f0d/deploys)
+
+
 
 ## Projektplan
 
-1. Koalitionsvertrag in Vorhaben aufspalten
+1. Digitalstrategie in Vorhaben aufspalten
 2. Ggf. priorisieren und kontextualisieren
 3. Redaktionelle Begleitung des Fortschritts
 
 
 ## Mitmachen
 
-Wir sind in Phase 1: Koalitionsvertrag in Vorhaben aufspalten. Pull Requests um Vorhaben in den Kapiteln zu identifizieren werden gerne entgegengenommen.
+Wir sind in Phase 1: Digitalstrategie in Vorhaben aufspalten. Pull Requests um Vorhaben in den Kapiteln zu identifizieren werden gerne entgegengenommen.
 
 Ein Vorhaben definieren wir als steuerbare und überprüfbare politische Veränderung, wie die Einführung eines Gesetzes oder die Änderung einer Verordnung.
 
@@ -21,7 +25,7 @@ Um ein Vorhaben zu markieren, kann als einfachster Schritt ein Markdown-Link um 
 
 ## Technik
 
-Der Koalitionsvertrag findet sich mit seinen Kapiteln in `_chapters`.
+Die Digitalstrategie findet sich mit ihren Kapiteln in `_chapters`.
 
 Im YAML-Frontmatter werden die Vorhaben gesammelt und folgendermaßen gegliedert:
 
