@@ -11,7 +11,7 @@ layout: default
 {% assign chapters = site.chapters | sort: 'order' %}
 <ul>
 {% for chapter in chapters %}
-  <li><a href="#{{chapter.section}}">{{chapter.title}}</a> ({{chapter.statements | size }} Vorhaben)</a></li>
+  <li><a href="#{{chapter.section}}">{{chapter.title}} ({{chapter.statements | size }} Vorhaben)</a></li>
 {% endfor %}
 </ul>
 {% for chapter in chapters %}
